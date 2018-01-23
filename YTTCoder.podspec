@@ -15,7 +15,7 @@ Pod::Spec.new do |s|
   #  summary should be tweet-length, and the description more in depth.
   #
 
-  s.name         = "YTTCoder.podspec"
+  s.name         = "YTTCoder"
   s.version      = "1.0.0"
   s.summary      = "YTTCoder is a tool of class extension."
 
@@ -27,7 +27,7 @@ Pod::Spec.new do |s|
   # s.description  = <<-DESC
   #                 DESC
 
-  s.homepage     = "https://github.com/AndyCuiYTT/YTTJsonCodable"
+  s.homepage     = "https://github.com/AndyCuiYTT/YTTCoder"
   # s.screenshots  = "www.example.com/screenshots_1.gif", "www.example.com/screenshots_2.gif"
 
 
@@ -79,7 +79,7 @@ Pod::Spec.new do |s|
   #  Supports git, hg, bzr, svn and HTTP.
   #
 
-  s.source       = { :git => "https://github.com/AndyCuiYTT/YTTJsonCodable.git", :tag => "#{s.version}" }
+  s.source       = { :git => "https://github.com/AndyCuiYTT/YTTCoder.git", :tag => "#{s.version}" }
 
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -90,7 +90,7 @@ Pod::Spec.new do |s|
   #  Not including the public_header_files will make all headers public.
   #
 
-  s.source_files  = "YTTCoder/*.swift"
+  s.source_files  = "YTTCoder/YTTCoder/*.swift"
   # s.exclude_files = "Classes/Exclude"
 
   # s.public_header_files = "Classes/**/*.h"
