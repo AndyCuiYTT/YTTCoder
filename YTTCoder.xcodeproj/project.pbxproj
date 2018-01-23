@@ -14,7 +14,7 @@
 		D9825B2B2016D1A9000D1E9B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D9825B292016D1A9000D1E9B /* LaunchScreen.storyboard */; };
 		D9825B362016D1A9000D1E9B /* YTTCoderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9825B352016D1A9000D1E9B /* YTTCoderTests.swift */; };
 		D9825B412016D1A9000D1E9B /* YTTCoderUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9825B402016D1A9000D1E9B /* YTTCoderUITests.swift */; };
-		D9825B512016DD3C000D1E9B /* YTTCoder in Resources */ = {isa = PBXBuildFile; fileRef = D9825B502016DD3B000D1E9B /* YTTCoder */; };
+		D9A6ED4920170BFE00496AFF /* Coder in Resources */ = {isa = PBXBuildFile; fileRef = D9A6ED4820170BFE00496AFF /* Coder */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,7 +48,7 @@
 		D9825B3C2016D1A9000D1E9B /* YTTCoderUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = YTTCoderUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D9825B402016D1A9000D1E9B /* YTTCoderUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YTTCoderUITests.swift; sourceTree = "<group>"; };
 		D9825B422016D1A9000D1E9B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D9825B502016DD3B000D1E9B /* YTTCoder */ = {isa = PBXFileReference; lastKnownFileType = folder; path = YTTCoder; sourceTree = "<group>"; };
+		D9A6ED4820170BFE00496AFF /* Coder */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Coder; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,7 +99,7 @@
 		D9825B1F2016D1A9000D1E9B /* YTTCoder */ = {
 			isa = PBXGroup;
 			children = (
-				D9825B502016DD3B000D1E9B /* YTTCoder */,
+				D9A6ED4820170BFE00496AFF /* Coder */,
 				D9825B202016D1A9000D1E9B /* AppDelegate.swift */,
 				D9825B222016D1A9000D1E9B /* ViewController.swift */,
 				D9825B242016D1A9000D1E9B /* Main.storyboard */,
@@ -237,7 +237,7 @@
 			files = (
 				D9825B2B2016D1A9000D1E9B /* LaunchScreen.storyboard in Resources */,
 				D9825B282016D1A9000D1E9B /* Assets.xcassets in Resources */,
-				D9825B512016DD3C000D1E9B /* YTTCoder in Resources */,
+				D9A6ED4920170BFE00496AFF /* Coder in Resources */,
 				D9825B262016D1A9000D1E9B /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -430,14 +430,17 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = YTTCoder/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = AndyCuiYTT.YTTCoder;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -445,14 +448,17 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = YTTCoder/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = AndyCuiYTT.YTTCoder;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
