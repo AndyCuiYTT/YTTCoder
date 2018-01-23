@@ -14,7 +14,7 @@
 		D9825B2B2016D1A9000D1E9B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D9825B292016D1A9000D1E9B /* LaunchScreen.storyboard */; };
 		D9825B362016D1A9000D1E9B /* YTTCoderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9825B352016D1A9000D1E9B /* YTTCoderTests.swift */; };
 		D9825B412016D1A9000D1E9B /* YTTCoderUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9825B402016D1A9000D1E9B /* YTTCoderUITests.swift */; };
-		D9825B4F2016D208000D1E9B /* YTTCoder in Resources */ = {isa = PBXBuildFile; fileRef = D9825B4E2016D208000D1E9B /* YTTCoder */; };
+		D9825B512016DD3C000D1E9B /* YTTCoder in Resources */ = {isa = PBXBuildFile; fileRef = D9825B502016DD3B000D1E9B /* YTTCoder */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,7 +48,7 @@
 		D9825B3C2016D1A9000D1E9B /* YTTCoderUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = YTTCoderUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D9825B402016D1A9000D1E9B /* YTTCoderUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YTTCoderUITests.swift; sourceTree = "<group>"; };
 		D9825B422016D1A9000D1E9B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D9825B4E2016D208000D1E9B /* YTTCoder */ = {isa = PBXFileReference; lastKnownFileType = folder; name = YTTCoder; path = YTTCoder/YTTCoder; sourceTree = "<group>"; };
+		D9825B502016DD3B000D1E9B /* YTTCoder */ = {isa = PBXFileReference; lastKnownFileType = folder; path = YTTCoder; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,7 +80,6 @@
 			isa = PBXGroup;
 			children = (
 				D9825B1F2016D1A9000D1E9B /* YTTCoder */,
-				D9825B4E2016D208000D1E9B /* YTTCoder */,
 				D9825B342016D1A9000D1E9B /* YTTCoderTests */,
 				D9825B3F2016D1A9000D1E9B /* YTTCoderUITests */,
 				D9825B1E2016D1A9000D1E9B /* Products */,
@@ -100,6 +99,7 @@
 		D9825B1F2016D1A9000D1E9B /* YTTCoder */ = {
 			isa = PBXGroup;
 			children = (
+				D9825B502016DD3B000D1E9B /* YTTCoder */,
 				D9825B202016D1A9000D1E9B /* AppDelegate.swift */,
 				D9825B222016D1A9000D1E9B /* ViewController.swift */,
 				D9825B242016D1A9000D1E9B /* Main.storyboard */,
@@ -237,7 +237,7 @@
 			files = (
 				D9825B2B2016D1A9000D1E9B /* LaunchScreen.storyboard in Resources */,
 				D9825B282016D1A9000D1E9B /* Assets.xcassets in Resources */,
-				D9825B4F2016D208000D1E9B /* YTTCoder in Resources */,
+				D9825B512016DD3C000D1E9B /* YTTCoder in Resources */,
 				D9825B262016D1A9000D1E9B /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -367,7 +367,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -418,7 +418,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -432,6 +432,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = YTTCoder/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = AndyCuiYTT.YTTCoder;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -446,6 +447,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = YTTCoder/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = AndyCuiYTT.YTTCoder;
 				PRODUCT_NAME = "$(TARGET_NAME)";

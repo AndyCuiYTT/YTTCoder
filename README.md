@@ -1,4 +1,4 @@
-## YTTCoder
+## [YTTCoder](https://github.com/AndyCuiYTT/YTTCoder)
 实现常用的数据解析,例如: JSON 转 Model, 字典转 JSON等
 #### YTTJsonCodable: JSON 与 Model 之间相互转化的工具类
 > 提供数据转化的类方法,可直接调用.
@@ -18,8 +18,14 @@
 > * getValue(withKeyPath): 根据路径获取值
 
 #### YTTStringCoder: 字符串扩展类
-> 调用使用 obj.ytt. toDictionary() 形式调用
+> 调用使用 obj.ytt.toDictionary() 形式调用
 > 
 > * toDictionary: JSON 字符串转字典
 > * toArray: JSON 字符串转数组
+> * toDate: 时间字符串转 Date 对象
+
+#### YTTDateCoder: Date 扩展类
+> 调用使用 obj.ytt.toString() 形式调用
+> 
+> * toString: Date 格式化
 
