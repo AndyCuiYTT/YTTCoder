@@ -24,8 +24,7 @@ Pod::Spec.new do |s|
   #   * Try to keep it short, snappy and to the point.
   #   * Write the description between the DESC delimiters below.
   #   * Finally, don't worry about the indent, CocoaPods strips it!
-  # s.description  = <<-DESC
-  #                 DESC
+  s.description  = "实现常用的数据解析,例如: JSON 转 Model, 字典转 JSON等"
 
   s.homepage     = "https://github.com/AndyCuiYTT/YTTCoder"
   # s.screenshots  = "www.example.com/screenshots_1.gif", "www.example.com/screenshots_2.gif"
