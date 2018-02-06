@@ -14,7 +14,13 @@
 		D9825B2B2016D1A9000D1E9B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D9825B292016D1A9000D1E9B /* LaunchScreen.storyboard */; };
 		D9825B362016D1A9000D1E9B /* YTTCoderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9825B352016D1A9000D1E9B /* YTTCoderTests.swift */; };
 		D9825B412016D1A9000D1E9B /* YTTCoderUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9825B402016D1A9000D1E9B /* YTTCoderUITests.swift */; };
-		D9A6ED4920170BFE00496AFF /* Coder in Resources */ = {isa = PBXBuildFile; fileRef = D9A6ED4820170BFE00496AFF /* Coder */; };
+		D9AE986E201AD3E100159BB4 /* YTTStringCoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9AE9867201AD3E000159BB4 /* YTTStringCoder.swift */; };
+		D9AE986F201AD3E100159BB4 /* YTTDateCoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9AE9868201AD3E000159BB4 /* YTTDateCoder.swift */; };
+		D9AE9870201AD3E100159BB4 /* YTTArrayCoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9AE9869201AD3E000159BB4 /* YTTArrayCoder.swift */; };
+		D9AE9871201AD3E100159BB4 /* YTTJson.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9AE986A201AD3E000159BB4 /* YTTJson.swift */; };
+		D9AE9872201AD3E100159BB4 /* YTTDictionaryCoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9AE986B201AD3E000159BB4 /* YTTDictionaryCoder.swift */; };
+		D9AE9873201AD3E100159BB4 /* YTTCoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9AE986C201AD3E100159BB4 /* YTTCoder.swift */; };
+		D9AE9874201AD3E100159BB4 /* YTTJsonCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9AE986D201AD3E100159BB4 /* YTTJsonCodable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,7 +54,13 @@
 		D9825B3C2016D1A9000D1E9B /* YTTCoderUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = YTTCoderUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D9825B402016D1A9000D1E9B /* YTTCoderUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YTTCoderUITests.swift; sourceTree = "<group>"; };
 		D9825B422016D1A9000D1E9B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D9A6ED4820170BFE00496AFF /* Coder */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Coder; sourceTree = "<group>"; };
+		D9AE9867201AD3E000159BB4 /* YTTStringCoder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YTTStringCoder.swift; sourceTree = "<group>"; };
+		D9AE9868201AD3E000159BB4 /* YTTDateCoder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YTTDateCoder.swift; sourceTree = "<group>"; };
+		D9AE9869201AD3E000159BB4 /* YTTArrayCoder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YTTArrayCoder.swift; sourceTree = "<group>"; };
+		D9AE986A201AD3E000159BB4 /* YTTJson.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YTTJson.swift; sourceTree = "<group>"; };
+		D9AE986B201AD3E000159BB4 /* YTTDictionaryCoder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YTTDictionaryCoder.swift; sourceTree = "<group>"; };
+		D9AE986C201AD3E100159BB4 /* YTTCoder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YTTCoder.swift; sourceTree = "<group>"; };
+		D9AE986D201AD3E100159BB4 /* YTTJsonCodable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YTTJsonCodable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,7 +111,7 @@
 		D9825B1F2016D1A9000D1E9B /* YTTCoder */ = {
 			isa = PBXGroup;
 			children = (
-				D9A6ED4820170BFE00496AFF /* Coder */,
+				D9AE9866201AD3C600159BB4 /* Coder */,
 				D9825B202016D1A9000D1E9B /* AppDelegate.swift */,
 				D9825B222016D1A9000D1E9B /* ViewController.swift */,
 				D9825B242016D1A9000D1E9B /* Main.storyboard */,
@@ -126,6 +138,20 @@
 				D9825B422016D1A9000D1E9B /* Info.plist */,
 			);
 			path = YTTCoderUITests;
+			sourceTree = "<group>";
+		};
+		D9AE9866201AD3C600159BB4 /* Coder */ = {
+			isa = PBXGroup;
+			children = (
+				D9AE9869201AD3E000159BB4 /* YTTArrayCoder.swift */,
+				D9AE986C201AD3E100159BB4 /* YTTCoder.swift */,
+				D9AE9868201AD3E000159BB4 /* YTTDateCoder.swift */,
+				D9AE986B201AD3E000159BB4 /* YTTDictionaryCoder.swift */,
+				D9AE986A201AD3E000159BB4 /* YTTJson.swift */,
+				D9AE986D201AD3E100159BB4 /* YTTJsonCodable.swift */,
+				D9AE9867201AD3E000159BB4 /* YTTStringCoder.swift */,
+			);
+			path = Coder;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -237,7 +263,6 @@
 			files = (
 				D9825B2B2016D1A9000D1E9B /* LaunchScreen.storyboard in Resources */,
 				D9825B282016D1A9000D1E9B /* Assets.xcassets in Resources */,
-				D9A6ED4920170BFE00496AFF /* Coder in Resources */,
 				D9825B262016D1A9000D1E9B /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -264,7 +289,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				D9825B232016D1A9000D1E9B /* ViewController.swift in Sources */,
+				D9AE9870201AD3E100159BB4 /* YTTArrayCoder.swift in Sources */,
+				D9AE986F201AD3E100159BB4 /* YTTDateCoder.swift in Sources */,
+				D9AE986E201AD3E100159BB4 /* YTTStringCoder.swift in Sources */,
 				D9825B212016D1A9000D1E9B /* AppDelegate.swift in Sources */,
+				D9AE9872201AD3E100159BB4 /* YTTDictionaryCoder.swift in Sources */,
+				D9AE9871201AD3E100159BB4 /* YTTJson.swift in Sources */,
+				D9AE9873201AD3E100159BB4 /* YTTCoder.swift in Sources */,
+				D9AE9874201AD3E100159BB4 /* YTTJsonCodable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

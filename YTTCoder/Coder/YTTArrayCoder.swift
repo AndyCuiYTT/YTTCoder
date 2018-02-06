@@ -15,9 +15,7 @@ public extension Array {
             return YTTArrayCoder(self)
         }
     }
-    
 }
-
 
 
 public class YTTArrayCoder<T> {
@@ -45,6 +43,17 @@ public class YTTArrayCoder<T> {
         }
     }
     
-    
+    /// 数组转 Data
+    ///
+    /// - Returns: 转换后 Data
+    /// - Throws: 异常(YTTJsonCodableError)
+    public func toData() throws -> Data {
+        do {
+            let jsonData = try JSONSerialization.data(withJSONObject: array, options: .prettyPrinted)
+            return jsonData
+        } catch {
+            throw YTTJsonCodableError.EncodableError
+        }
+    }
 }
 

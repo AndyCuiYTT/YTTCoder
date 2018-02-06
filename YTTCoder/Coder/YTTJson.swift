@@ -22,8 +22,8 @@ public extension YTTJson {
                 if let object = try jsonStr.ytt.toDictionary(keyType: String.self, valueType: Any.self).ytt.getValue(withKeyPath: path) {
                     if let dic = object as? [String: Any] {
                         lastJSONStr = try dic.ytt.toJson()
-                    }else if let arr = object as? [Any] {
-                        lastJSONStr = try arr.ytt.toJson()
+                    }else if let _ = object as? [Any] {
+                        throw YTTJsonCodableError.DecoderError
                     }else if let str = object as? String {
                         lastJSONStr = str
                     }else {
@@ -35,22 +35,63 @@ public extension YTTJson {
             }
         }
         
-        do {
-            let obj = try YTTJsonCoder<Self>.jsonToObject(jsonStr: lastJSONStr)
-            return obj
-        } catch  {
-            throw error
+        if let jsonData = lastJSONStr.data(using: .utf8) {
+            do {
+                let obj = try YTTJsonCoder<Self>.jsonToObject(jsonData: jsonData)
+                return obj
+            } catch  {
+                throw error
+            }
+        }else {
+            throw YTTJsonCodableError.DataError
         }
     }
     
     public func toJson() throws -> String {
         do {
-            let jsonStr = try YTTJsonCoder<Self>.objectToJson(object: self)
-            return jsonStr
+            let jsonData = try YTTJsonCoder<Self>.objectToJson(object: self)
+            if let jsonStr = String(data: jsonData, encoding: .utf8) {
+                return jsonStr
+            }else{
+                throw YTTJsonCodableError.DataError
+            }
         } catch {
             throw error
         }
     }
+}
+
+public extension Array where Element: YTTJson {
+    
+   public static func initWithString(jsonStr: String, keyPath: String? = nil)throws -> Array {
+        var lastJSONStr = jsonStr
+        if let path = keyPath {
+            do {
+                if let object = try jsonStr.ytt.toDictionary(keyType: String.self, valueType: Any.self).ytt.getValue(withKeyPath: path) {
+                   if let arr = object as? [Any] {
+                    lastJSONStr = try arr.ytt.toJson()
+                    }else {
+                        throw YTTJsonCodableError.DecoderError
+                    }
+                }
+            } catch {
+                throw error
+            }
+        }
+        if let jsonData = lastJSONStr.data(using: .utf8) {
+            do {
+                let obj = try JSONDecoder().decode(self, from: jsonData)
+                return obj
+            } catch  {
+                throw error
+            }
+        }else {
+            throw YTTJsonCodableError.DataError
+        }
+    }
+    
+    
+    
 }
 
 fileprivate class YTTJsonCoder<T: YTTJson> {
@@ -61,16 +102,12 @@ fileprivate class YTTJsonCoder<T: YTTJson> {
     ///   - jsonStr: json 字符串
     /// - Returns: 转换后的对象
     /// - Throws: 异常(YTTJsonCodableError)
-    fileprivate class func jsonToObject(jsonStr: String) throws -> T {
-        if let jsonData = jsonStr.data(using: .utf8) {
-            do {
-                let object = try JSONDecoder().decode(T.self, from: jsonData)
-                return object
-            } catch {
-                throw YTTJsonCodableError.DecoderError
-            }
-        }else {
-            throw YTTJsonCodableError.DataError
+    fileprivate class func jsonToObject(jsonData: Data) throws -> T {
+        do {
+            let object = try JSONDecoder().decode(T.self, from: jsonData)
+            return object
+        } catch {
+            throw YTTJsonCodableError.DecoderError
         }
     }
     
@@ -80,16 +117,12 @@ fileprivate class YTTJsonCoder<T: YTTJson> {
     /// - Parameter object: 要转换的对象
     /// - Returns: 转换后的字符串
     /// - Throws: 异常(YTTJsonCodableError)
-    fileprivate class func objectToJson(object: T) throws -> String {
+    fileprivate class func objectToJson(object: T) throws -> Data {
         do {
             let encoder = JSONEncoder()
             encoder.outputFormatting = .prettyPrinted
-            let jsonData = try encoder.encode(object)
-            if let jsonStr = String(data: jsonData, encoding: .utf8) {
-                return jsonStr
-            }else{
-                throw YTTJsonCodableError.DataError
-            }
+            return try encoder.encode(object)
+            
         } catch {
             throw YTTJsonCodableError.EncodableError
         }
