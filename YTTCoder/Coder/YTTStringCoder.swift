@@ -73,6 +73,18 @@ public class YTTStringCoder {
         }
     }
     
+    /// 字符串转 Data
+    ///
+    /// - Returns: 转化后的 Data
+    /// - Throws: 错误
+    public func toData() throws -> Data{
+        if let jsonData = string.data(using: .utf8) {
+            return jsonData
+        }else {
+            throw YTTJsonCodableError.DataError
+        }
+    }
+    
     
     /// 时间转 Date
     ///
@@ -83,5 +95,9 @@ public class YTTStringCoder {
         dateFormatter.dateFormat = formatterStr
         return dateFormatter.date(from: string)
     }
+    
+    
+    
+    
     
 }

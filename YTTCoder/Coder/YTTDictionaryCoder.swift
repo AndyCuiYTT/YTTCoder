@@ -47,6 +47,20 @@ public class YTTDictionaryCoder<T> {
         }
     }
     
+    /// 字典转 Data
+    ///
+    /// - Returns: 转化后 Data
+    /// - Throws: 异常(YTTJsonCodableError)
+    public func toData() throws -> Data {
+        do {
+            let jsonData = try JSONSerialization.data(withJSONObject: dictionary, options: .prettyPrinted)
+            return jsonData
+            
+        } catch {
+            throw YTTJsonCodableError.EncodableError
+        }
+    }
+    
     /// 根据路径获取字典 value
     ///
     /// - Parameter keyPath: 路径地址(class.student)

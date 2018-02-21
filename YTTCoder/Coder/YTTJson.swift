@@ -14,12 +14,12 @@ public protocol YTTJson: Codable {
 }
 
 public extension YTTJson {
-    public static func initWithString(jsonStr: String, keyPath: String? = nil) throws -> Self {
+    public static func deserializeFrom(json: String, keyPath: String? = nil) throws -> Self {
         
-        var lastJSONStr = jsonStr
+        var lastJSONStr = json
         if let path = keyPath {
             do {
-                if let object = try jsonStr.ytt.toDictionary(keyType: String.self, valueType: Any.self).ytt.getValue(withKeyPath: path) {
+                if let object = try json.ytt.toDictionary(keyType: String.self, valueType: Any.self).ytt.getValue(withKeyPath: path) {
                     if let dic = object as? [String: Any] {
                         lastJSONStr = try dic.ytt.toJson()
                     }else if let _ = object as? [Any] {
@@ -47,6 +47,28 @@ public extension YTTJson {
         }
     }
     
+    public static func deserializeFrom(dictionary: Dictionary<String, Any>, keyPath: String? = nil) throws -> Self {
+        
+        do {
+            var jsonData: Data
+            if let path = keyPath {
+                if let dic = dictionary.ytt.getValue(withKeyPath: path) as? [String: Any] {
+                    jsonData = try dic.ytt.toData()
+                }else {
+                    throw YTTJsonCodableError.DataError
+                }
+            }else {
+                jsonData = try dictionary.ytt.toData()
+            }
+            
+            let obj = try YTTJsonCoder<Self>.jsonToObject(jsonData: jsonData)
+            return obj
+        } catch  {
+            throw error
+        }
+
+    }
+    
     public func toJson() throws -> String {
         do {
             let jsonData = try YTTJsonCoder<Self>.objectToJson(object: self)
@@ -63,33 +85,38 @@ public extension YTTJson {
 
 public extension Array where Element: YTTJson {
     
-   public static func initWithString(jsonStr: String, keyPath: String? = nil)throws -> Array {
-        var lastJSONStr = jsonStr
-        if let path = keyPath {
-            do {
-                if let object = try jsonStr.ytt.toDictionary(keyType: String.self, valueType: Any.self).ytt.getValue(withKeyPath: path) {
-                   if let arr = object as? [Any] {
-                    lastJSONStr = try arr.ytt.toJson()
+    public static func deserializeFrom(json: String, keyPath: String? = nil) throws -> Array {
+        var jsonData: Data
+        do {
+            if let path = keyPath {
+                if let object = try json.ytt.toDictionary(keyType: String.self, valueType: Any.self).ytt.getValue(withKeyPath: path) {
+                    if let arr = object as? [Any] {
+                        jsonData = try arr.ytt.toData()
                     }else {
                         throw YTTJsonCodableError.DecoderError
                     }
+                }else {
+                    throw YTTJsonCodableError.DataError
                 }
-            } catch {
-                throw error
+            }else {
+                jsonData = try json.ytt.toData()
             }
-        }
-        if let jsonData = lastJSONStr.data(using: .utf8) {
-            do {
-                let obj = try JSONDecoder().decode(self, from: jsonData)
-                return obj
-            } catch  {
-                throw error
-            }
-        }else {
-            throw YTTJsonCodableError.DataError
+            let obj = try JSONDecoder().decode(self, from: jsonData)
+            return obj
+        } catch {
+            throw error
         }
     }
     
+    public static func deserializeFrom(array: [Any])throws -> Array {
+        do {
+            let jsonData = try array.ytt.toData()
+            let obj = try JSONDecoder().decode(self, from: jsonData)
+            return obj
+        } catch {
+            throw error
+        }
+    }
     
     
 }

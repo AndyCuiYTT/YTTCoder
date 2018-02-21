@@ -44,7 +44,7 @@ class ViewController: UIViewController {
 //            print("error")
 //        }
         
-        if let arr = try? [Student].initWithString(jsonStr: string) {
+        if let arr = try? [Student].deserializeFrom(array: string.ytt.toArray(elementType: (Any).self)) {
             for stu in arr {
                 print(stu.name, stu.age, stu.gender)
             }
